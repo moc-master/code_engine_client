@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import bot_api_conn_grpc_pb2 as bot__api__conn__grpc__pb2
+from code_engine_client import bot_api_conn_grpc_pb2 as bot__api__conn__grpc__pb2
 
 
 class BotApiConnGrpcStub(object):

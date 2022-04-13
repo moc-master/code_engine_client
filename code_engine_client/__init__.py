@@ -1,1 +1,3 @@
-name="code_engine_client"
+# import code_engine_client.code_engine_client
+#from code_engine_client.bot_api_conn_grpc_pb2_grpc import BotApiConnGrpcStub
+from code_engine_client.code_engine_client import CodeEngineClient

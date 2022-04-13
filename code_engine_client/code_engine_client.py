@@ -6,11 +6,13 @@ import json
 import websocket
 import _thread
 import grpc
-import bot_api_conn_grpc_pb2
-import bot_api_conn_grpc_pb2_grpc
+import sys
+from code_engine_client import bot_api_conn_grpc_pb2
+from code_engine_client import bot_api_conn_grpc_pb2_grpc
 import sys
 import importlib
 from concurrent.futures import ThreadPoolExecutor
+
 
 
 class CodeEngineClient:
