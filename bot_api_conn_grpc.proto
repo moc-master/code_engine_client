@@ -1,0 +1,130 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.example.bot_api_conn";
+option java_outer_classname = "bot_api_conn_grpc";
+option objc_class_prefix = "HLW";
+
+package bot_api_conn_grpc;
+
+// service definition.
+service BotApiConnGrpc{
+
+    // send msg to bot
+    rpc SendBotMsg(SendBotMsgRequest) returns (SendBotMsgResponse) {}
+
+    // event msg from drive
+    rpc DriveEventMsg(DriveEventMsgRequest) returns (DriveEventMsgResponse) {}
+
+    // code save button
+    rpc CodeSaveMsg(CodeSaveMsgRequest) returns (CodeSaveMsgResponse) {}
+
+    // code test button
+    rpc CodeTestMsg(CodeTestMsgRequest) returns (CodeTestMsgResponse) {}
+
+    // code pc button
+    rpc CodePcMsg(CodePcMsgRequest) returns (CodePcMsgResponse) {}
+
+    // code switch seq button
+    rpc CodeSwitchSeqMsg(CodeSwitchSeqMsgRequest) returns (CodeSwitchSeqMsgResponse) {}
+
+}
+
+
+// send msg to bot
+message SendBotMsgRequest{
+    string openid = 1;
+    string bot_id = 2;
+    string cmd = 3;
+    string msg = 4;
+}
+
+message SendBotMsgResponse{
+    string openid = 1;
+    string bot_id = 2;
+    string cmd = 3;
+    int32 ret = 4;
+}
+
+// event msg from drive
+message DriveEventMsgRequest{
+    string openid = 1;
+    string id = 2;
+    string msg = 3;
+}
+
+message DriveEventMsgResponse{
+    string openid = 1;
+    string id = 2;
+    int32 ret = 3;
+}
+
+// code save button
+message CodeSaveMsgRequest{
+    string openid = 1;
+    string id = 2;
+    string msg = 3;
+}
+
+message CodeSaveMsgResponse{
+    string openid = 1;
+    string id = 2;
+    string msg = 3;
+    int32 ret = 4;
+}
+
+// code test button
+message CodeTestMsgRequest{
+    string openid = 1;
+    string id = 2;
+    string msg = 3;
+}
+
+message CodeTestMsgResponse{
+    string openid = 1;
+    string id = 2;
+    string msg = 3;
+    int32 ret = 4;
+}
+
+// code pc button
+message CodePcMsgRequest{
+    string openid = 1;
+    string id = 2;
+    string msg = 3;
+}
+
+message CodePcMsgResponse{
+    string openid = 1;
+    string id = 2;
+    string msg = 3;
+    int32 ret = 4;
+}
+
+// code switch seq button
+message CodeSwitchSeqMsgRequest{
+    string openid = 1;
+    string id = 2;
+    string msg = 3;
+}
+
+message CodeSwitchSeqMsgResponse{
+    string openid = 1;
+    string id = 2;
+    string msg = 3; // seq
+    int32 ret = 4;
+}
